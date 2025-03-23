@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./e2e/",
+    "paths": {
+      "@/*": ["*"],
+    },
+    "target": "ESNext",
+    "module": "ESNext",
+    "strict": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "types": ["node", "playwright", "@playwright/test"]
+  },
+  "include": ["e2e/tests", "e2e/page-objects", "e2e/utils"],
+  "exclude": ["node_modules"]
+}

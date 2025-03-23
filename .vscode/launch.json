@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Playwright Tests",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "node",
+      "args": ["./node_modules/.bin/playwright", "test", "--debug"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "env": {
+        "PWDEBUG": "1"
+      }
+    },
+    {
+      "name": "Run Playwright Tests in Headless Mode",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "node",
+      "args": ["./node_modules/.bin/playwright", "test"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    }
+  ]
+}
