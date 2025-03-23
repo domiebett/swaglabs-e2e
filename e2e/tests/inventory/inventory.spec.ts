@@ -47,4 +47,12 @@ test.describe('Inventory tests', () => {
 
     expect(await inventoryPage.productsAreSortedByPrice(true)).toBe(true);
   });
+
+  test('Standard user can sort products by name', async () => {
+    await loginPage.loginAsStandardUser();
+
+    await inventoryPage.sortProductsByName(true);
+
+    expect(await inventoryPage.productsAreSortedByName(true)).toBe(true);
+  });
 });

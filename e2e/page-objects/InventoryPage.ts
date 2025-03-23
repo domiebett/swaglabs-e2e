@@ -1,4 +1,5 @@
 import { pricesAreSorted } from '@/utils/price.helper';
+import { stringsAreSorted } from '@/utils/string.helpers';
 import { Locator, Page } from '@playwright/test';
 
 export class InventoryPage {
@@ -50,5 +51,16 @@ export class InventoryPage {
   async productsAreSortedByPrice(descending: boolean) {
     const prices = await this.inventoryItemPrices.allTextContents();
     return pricesAreSorted(prices, descending);
+  }
+
+  async sortProductsByName(descending: boolean) {
+    const label = descending ? 'Name (Z to A)' : 'Name (A to Z)';
+
+    await this.productSortContainer.selectOption({ label });
+  }
+
+  async productsAreSortedByName(descending: boolean) {
+    const names = await this.inventoryItemName.allTextContents();
+    return stringsAreSorted(names, descending);
   }
 }
