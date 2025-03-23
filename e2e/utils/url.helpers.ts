@@ -1,5 +1,5 @@
 import { Page } from 'playwright';
-import { baseUrl } from '../data/urls';
+import { baseUrl } from '@/data/urls';
 import { expect } from 'playwright/test';
 
 export async function expectUrlToBe(page: Page, url: string) {

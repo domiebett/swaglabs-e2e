@@ -1,5 +1,6 @@
-import { Page, Locator, expect } from '@playwright/test';
-import { UserCredentials, Users } from '../data/credentials';
+import { Locator, Page } from '@playwright/test';
+import { UserCredentials, Users } from '@/data/credentials';
+import { LoginUrl } from '@/data/urls';
 
 export class LoginPage {
   readonly page: Page;
@@ -17,7 +18,7 @@ export class LoginPage {
   }
 
   async goto() {
-    await this.page.goto('/');
+    await this.page.goto(LoginUrl);
   }
 
   async loginAsStandardUser() {

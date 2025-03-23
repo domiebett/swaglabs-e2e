@@ -1,8 +1,8 @@
 import { defineConfig, devices } from '@playwright/test';
-import { baseUrl } from './data/urls';
+import { baseUrl } from './e2e/data/urls';
 
 export default defineConfig({
-  testDir: './tests',
+  testDir: './e2e/tests',
   timeout: 30 * 1000,
   expect: {
     timeout: 5000,
@@ -23,5 +23,5 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
   ],
-  outputDir: 'test-results/',
+  outputDir: 'e2e/test-results/',
 });

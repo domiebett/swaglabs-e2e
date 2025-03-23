@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    "baseUrl": "./e2e/",
+    "paths": {
+      "@/*": ["*"],
+    },
     "target": "ESNext",
     "module": "ESNext",
     "strict": true,
@@ -9,6 +13,6 @@
     "resolveJsonModule": true,
     "types": ["node", "playwright", "@playwright/test"]
   },
-  "include": ["tests", "page-objects", "utils"],
+  "include": ["e2e/tests", "e2e/page-objects", "e2e/utils"],
   "exclude": ["node_modules"]
 }

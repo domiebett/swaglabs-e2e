@@ -1,4 +1,4 @@
-import { Credentials } from '../types/credentinals.types';
+import { Credentials } from '@/types/credentinals.types';
 
 export enum Users {
   Standard = 'standard_user',
