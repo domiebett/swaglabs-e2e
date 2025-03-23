@@ -25,8 +25,12 @@ export class InventoryPage {
     return this.inventoryItems.count();
   }
 
-  async addFirstItemToCart() {
-    await this.addToCartButton.first().click();
+  async getInventoryItemName(itemIndex: number) {
+    return this.inventoryItemName.nth(itemIndex).textContent();
+  }
+
+  async addItemToCart(itemIndex: number) {
+    await this.addToCartButton.nth(itemIndex).click();
   }
 
   async goToCart() {
