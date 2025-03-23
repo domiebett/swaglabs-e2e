@@ -17,7 +17,7 @@ test.describe('Inventory tests', () => {
     await loginPage.goto();
   });
 
-  test('Inventory has 6 items', async () => {
+  test('Inventory has 6 items', { tag: '@smoke' }, async () => {
     await loginPage.loginAsStandardUser();
 
     expect(await inventoryPage.getInventoryCount()).toBe(
@@ -25,7 +25,7 @@ test.describe('Inventory tests', () => {
     );
   });
 
-  test('Standard user can add item to cart', async () => {
+  test('Standard user can add item to cart', { tag: '@smoke' }, async () => {
     await loginPage.loginAsStandardUser();
 
     const itemIndex = 0;
