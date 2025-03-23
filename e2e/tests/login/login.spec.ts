@@ -11,7 +11,7 @@ test.describe('Login tests', () => {
     await loginPage.goto();
   });
 
-  test('Standard user can login', async ({ page }) => {
+  test('Standard user can login', { tag: '@smoke' }, async ({ page }) => {
     await loginPage.loginAsStandardUser();
 
     await expectUrlToBe(page, InventoryUrl);

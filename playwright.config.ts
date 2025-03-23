@@ -1,5 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
-import { baseUrl } from './e2e/data/urls';
+import { BaseUrl } from './e2e/data/urls';
 
 import * as dotenv from 'dotenv';
 dotenv.config();
@@ -15,7 +15,7 @@ export default defineConfig({
   retries: 0,
   reporter: [['html', { outputFolder: 'playwright-report', open: 'never' }]],
   use: {
-    baseURL: baseUrl,
+    baseURL: BaseUrl,
     headless: true,
     viewport: { width: 1280, height: 720 },
     ignoreHTTPSErrors: true,
