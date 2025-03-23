@@ -1,9 +1,13 @@
 import { defineConfig, devices } from '@playwright/test';
 import { baseUrl } from './e2e/data/urls';
 
+import * as dotenv from 'dotenv';
+dotenv.config();
+
 export default defineConfig({
   testDir: './e2e/tests',
   timeout: 30 * 1000,
+  globalSetup: require.resolve('./e2e/global-setup.ts'),
   expect: {
     timeout: 5000,
   },

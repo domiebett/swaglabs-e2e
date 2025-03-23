@@ -6,7 +6,7 @@ export enum Users {
 
 export const UserCredentials: Record<Users, Credentials> = {
   [Users.Standard]: {
-    username: 'standard_user',
-    password: 'secret_sauce',
+    username: process.env['STANDARD_USERNAME'] as string,
+    password: process.env['STANDARD_PASSWORD'] as string,
   },
 };
