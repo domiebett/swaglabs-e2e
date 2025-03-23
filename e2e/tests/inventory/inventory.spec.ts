@@ -39,4 +39,12 @@ test.describe('Inventory tests', () => {
     expect(await cartPage.getCartCount()).toBe(1);
     expect(await cartPage.getCartItemName(itemIndex)).toBe(itemName);
   });
+
+  test('Standard user can sort products by price', async () => {
+    await loginPage.loginAsStandardUser();
+
+    await inventoryPage.sortProductsByPrice(true);
+
+    expect(await inventoryPage.productsAreSortedByPrice(true)).toBe(true);
+  });
 });
