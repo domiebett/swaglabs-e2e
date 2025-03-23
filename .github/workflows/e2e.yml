@@ -30,15 +30,11 @@ jobs:
       - name: Setup .env
         run: |
           cp .env.example .env
-          echo "STANDARD_USERNAME=${{secrets.STANDARD_USERNAME}}" >> .env
-          echo "STANDARD_PASSWORD=${{secrets.STANDARD_PASSWORD}}" >> .env
+          echo "STANDARD_USERNAME=${{ secrets.STANDARD_USERNAME }}" >> .env
+          echo "STANDARD_PASSWORD=${{ secrets.STANDARD_PASSWORD }}" >> .env
 
       - name: Run E2E tests
         run: npx playwright test
-
-      - name: Set report success
-        id: set-report
-        run: echo "success=true" >> $GITHUB_OUTPUT
 
       - name: Upload Playwright HTML Report as Artifact
         if: always()
@@ -50,7 +46,8 @@ jobs:
   deploy-report:
     needs: e2e-tests
     runs-on: ubuntu-latest
-    if: ${{always}}
+    if: ${{ always() }}
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -66,9 +63,9 @@ jobs:
           name: playwright-report
           path: playwright-report
 
-      - name: Deploy Playwright Report to Github Pages
+      - name: Deploy Playwright Report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{secrets.GITHUB_TOKEN}}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./playwright-report
           commit_message: 'Deploy Playwright Report'
