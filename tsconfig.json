@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "strict": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "types": ["node", "playwright", "@playwright/test"]
+  },
+  "include": ["tests", "page-objects", "utils"],
+  "exclude": ["node_modules"]
+}
