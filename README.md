@@ -50,10 +50,10 @@ To set up the project, follow these steps:
    npx playwright install
    ```
    
-3. Create an `.env` file and copy the contents of `env.example` into it:
+3. Create a `.env` file and copy the contents of `.env.example` into it:
 
    ```sh
-   cp env.example .env
+   cp .env.example .env
    ```
 
 4. Fill in the appropriate variables in the `.env` file. (Values found on the [SwagLabs login page](https://www.saucedemo.com) ):
