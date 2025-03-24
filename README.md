@@ -1,5 +1,7 @@
 # Swaglabs End-to-End Testing Framework
 
+![Build Status](https://github.com/domiebett/swaglabs-e2e/actions/workflows/e2e.yml/badge.svg)
+
 This project is an end-to-end testing framework written using [Playwright](https://playwright.dev/) and TypeScript. It is designed to automate the testing of the Swaglabs application to satisfy the following requirements:
 
 In this section, you will have the opportunity to demonstrate your skills in automated testing. Your task is to create a new framework from scratch, following best practices for automated test framework development. At Ceros, we primarily use TypeScript and Playwright and would like you to follow a similar setup. However, you are welcome to choose a different framework if you can explain the benefits of your choice.
